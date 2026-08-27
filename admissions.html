@@ -1,0 +1,498 @@
+﻿<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Admissions | RDS Independent PU College</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffe081",
+                    "on-background": "#1a1c1e",
+                    "surface-dim": "#dadadc",
+                    "gradient-end": "#002244",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#e9c400",
+                    "on-primary": "#ffffff",
+                    "surface-base": "#f9f9ff",
+                    "on-primary-fixed": "#001b3c",
+                    "on-surface-variant": "#43474f",
+                    "secondary-fixed": "#ffe16d",
+                    "on-tertiary-fixed": "#231b00",
+                    "on-secondary-container": "#6e5c00",
+                    "on-tertiary-fixed-variant": "#564500",
+                    "tertiary-container": "#cca81a",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#d5e3ff",
+                    "surface-container-high": "#e8e8ea",
+                    "surface-container-low": "#f3f3f6",
+                    "secondary-container": "#fcd400",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#f9f9fc",
+                    "outline": "#737780",
+                    "gradient-mid": "#004080",
+                    "primary-container": "#003366",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#a7c8ff",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "inverse-on-surface": "#f0f0f3",
+                    "surface-container-highest": "#e2e2e5",
+                    "surface-container": "#eeeef0",
+                    "inverse-surface": "#2f3133",
+                    "background": "#f9f9fc",
+                    "glass-fill": "rgba(255, 255, 255, 0.70)",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e2e2e5",
+                    "secondary": "#705d00",
+                    "primary": "#001e40",
+                    "surface-tint": "#3a5f94",
+                    "on-primary-container": "#799dd6",
+                    "outline-variant": "#c3c6d1",
+                    "surface-container-lowest": "#ffffff",
+                    "gradient-start": "#003366",
+                    "on-surface": "#1a1c1e",
+                    "surface": "#f9f9fc",
+                    "on-tertiary-container": "#4e3e00",
+                    "tertiary-fixed-dim": "#eac339",
+                    "on-secondary-fixed-variant": "#544600",
+                    "glass-border": "rgba(255, 255, 255, 0.20)",
+                    "on-secondary-fixed": "#221b00",
+                    "tertiary": "#725c00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "unit": "4px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Sora"],
+                    "label-md": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-md": ["Sora"],
+                    "display-lg-mobile": ["Sora"],
+                    "display-lg": ["Sora"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .cinematic-bg {
+            background: linear-gradient(135deg, #003366 0%, #004080 50%, #002244 100%);
+        }
+        .reveal-hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal-visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        .journey-step:hover {
+            box-shadow: 0 10px 30px -5px rgba(252, 212, 0, 0.3);
+        }
+        .quick-enquiry-tab {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body class="bg-surface-base text-on-background font-body-md overflow-x-hidden">
+<!-- Quick Enquiry Floating Sidebar -->
+<div class="fixed right-0 top-1/2 z-[60] quick-enquiry-tab hidden lg:flex">
+<button class="bg-primary text-white px-3 py-6 rounded-l-xl font-bold hover:bg-primary-container transition-all shadow-2xl flex items-center gap-2 group" onclick="document.getElementById('enquiry-section').scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined rotate-90">send</span>
+        QUICK ENQUIRY
+    </button>
+</div>
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-[100] bg-glass-fill backdrop-blur-md border-b border-glass-border shadow-sm">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-20">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="index.html">RDS Independent PU College</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="index.html">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="about.html">About</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="academics.html">Academics</a>
+<a class="font-label-lg text-label-lg text-secondary font-bold transition-colors duration-300 transition-transform active:scale-95" aria-current="page" href="admissions.html">Admissions</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="facilities.html">Facilities</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="faculty.html">Faculty</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="gallery.html">Gallery</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="news.html">News</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="events.html">Events</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="downloads.html">Downloads</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="contact.html">Contact</a>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-lg hover:scale-105 transition-all shadow-md inline-block" href="admissions.html">Apply Now</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<!-- Hero Section -->
+<header class="relative py-32 cinematic-bg overflow-hidden">
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop text-center">
+<div class="inline-block bg-secondary-container/20 border border-secondary-container/30 text-secondary-container px-6 py-2 rounded-full font-bold mb-6 backdrop-blur-md">
+            ADMISSIONS OPEN: 2026-27 SESSION
+        </div>
+<h1 class="font-display-lg text-display-lg text-white mb-6">Begin Your Journey to Excellence</h1>
+<p class="font-body-lg text-body-lg text-white/80 max-w-2xl mx-auto mb-10">Join a legacy of academic distinction. Admissions for the <span class="text-secondary-fixed font-bold">2026-27 academic session</span> are now open for Science, Commerce, and Arts streams.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+                Online Application
+            </button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">download</span>
+                Download Prospectus
+            </button>
+</div>
+</div>
+</header>
+<!-- Quick Stats / Trust Bar -->
+<section class="relative -mt-16 z-20 px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card p-8 rounded-2xl flex items-center gap-6 shadow-xl">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">24+ Years</h3>
+<p class="text-on-surface-variant font-label-lg">Legacy of Excellence</p>
+</div>
+</div>
+<div class="glass-card p-8 rounded-2xl flex items-center gap-6 shadow-xl">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">98% Success</h3>
+<p class="text-on-surface-variant font-label-lg">PU Board Results</p>
+</div>
+</div>
+<div class="glass-card p-8 rounded-2xl flex items-center gap-6 shadow-xl">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">A+ Grade</h3>
+<p class="text-on-surface-variant font-label-lg">Institutional Rating</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Admission Process: Step-by-Step -->
+<section class="py-32 max-w-container-max mx-auto px-margin-desktop overflow-hidden">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">The Admission Journey</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Our streamlined interactive admission process for the <span class="font-bold">2026-27 session</span> ensures a smooth transition for every aspiring student.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+<!-- Process Cards -->
+<div class="reveal-hidden relative group">
+<div class="journey-step glass-card p-8 rounded-2xl h-full border-b-4 border-transparent hover:border-secondary transition-all hover:translate-y-[-12px] hover:bg-white">
+<div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold mb-6 text-xl group-hover:scale-110 transition-transform">1</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-3">Enquiry</h4>
+<p class="text-on-surface-variant text-body-md">Fill out the online enquiry form or visit our campus for a personalized counseling session.</p>
+</div>
+</div>
+<div class="reveal-hidden relative group" style="transition-delay: 100ms;">
+<div class="journey-step glass-card p-8 rounded-2xl h-full border-b-4 border-transparent hover:border-secondary transition-all hover:translate-y-[-12px] hover:bg-white">
+<div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold mb-6 text-xl group-hover:scale-110 transition-transform">2</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-3">Registration</h4>
+<p class="text-on-surface-variant text-body-md">Submit the application form along with the required documents and registration fee.</p>
+</div>
+</div>
+<div class="reveal-hidden relative group" style="transition-delay: 200ms;">
+<div class="journey-step glass-card p-8 rounded-2xl h-full border-b-4 border-transparent hover:border-secondary transition-all hover:translate-y-[-12px] hover:bg-white">
+<div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold mb-6 text-xl group-hover:scale-110 transition-transform">3</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-3">Interview</h4>
+<p class="text-on-surface-variant text-body-md">An interactive session between the student, parents, and the admissions committee.</p>
+</div>
+</div>
+<div class="reveal-hidden relative group" style="transition-delay: 300ms;">
+<div class="journey-step glass-card p-8 rounded-2xl h-full border-b-4 border-transparent hover:border-secondary transition-all hover:translate-y-[-12px] hover:bg-white">
+<div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold mb-6 text-xl group-hover:scale-110 transition-transform">4</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-3">Admission</h4>
+<p class="text-on-surface-variant text-body-md">Final seat confirmation upon payment of fees and verification of original documents.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Enquiry & Scholarship Bento Grid -->
+<section class="py-24 bg-surface-container-low" id="enquiry-section">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Scholarship Info -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<div class="glass-card p-10 rounded-3xl bg-primary text-white overflow-hidden relative group">
+<div class="relative z-10">
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-label-md font-bold mb-6 inline-block">2026-27 MERIT SCHOLARSHIPS</span>
+<h2 class="font-headline-lg text-headline-lg mb-4">Invest in Your Potential</h2>
+<p class="text-white/80 mb-8 font-body-md">We reward academic excellence with scholarships of up to 100% on tuition fees for students scoring above 95% in Board Exams.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">check_circle</span>
+<span class="">Merit-based fee waivers</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">check_circle</span>
+<span class="">Sports quota scholarships</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">check_circle</span>
+<span class="">Special sibling discounts</span>
+</li>
+</ul>
+<button class="text-secondary-fixed font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                            View Scholarship Matrix <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="reveal-hidden glass-card p-8 rounded-3xl border-2 border-primary/10">
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Required Documents</h3>
+<div class="grid grid-cols-1 gap-3">
+<div class="flex items-center gap-3 p-3 bg-white/50 rounded-lg hover:bg-white transition-colors cursor-default border border-transparent hover:border-primary/20">
+<span class="material-symbols-outlined text-primary">description</span>
+<span class="text-label-lg">SSLC/10th Marks Card</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/50 rounded-lg hover:bg-white transition-colors cursor-default border border-transparent hover:border-primary/20">
+<span class="material-symbols-outlined text-primary">badge</span>
+<span class="text-label-lg">Transfer Certificate (TC)</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/50 rounded-lg hover:bg-white transition-colors cursor-default border border-transparent hover:border-primary/20">
+<span class="material-symbols-outlined text-primary">photo_camera</span>
+<span class="text-label-lg">Passport Size Photographs (5)</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/50 rounded-lg hover:bg-white transition-colors cursor-default border border-transparent hover:border-primary/20">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<span class="text-label-lg">Aadhar Card Copy</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Enquiry Form -->
+<div class="lg:col-span-7">
+<div class="bg-white rounded-3xl p-10 shadow-xl shadow-primary/5 border border-outline-variant/30">
+<div class="mb-8">
+<div class="text-secondary font-bold text-label-lg mb-2">2026-27 ADMISSION CYCLE</div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Online Enquiry</h2>
+<p class="text-on-surface-variant">Our admissions team will reach out to you within 24 business hours.</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-lg text-primary">Student Name</label>
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Enter full name" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-primary">Parent's Mobile</label>
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="+91 00000 00000" type="tel">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-primary">Email Address</label>
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="example@email.com" type="email">
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-lg text-primary">Preferred Stream</label>
+<select class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all appearance-none bg-white">
+<option>Science (PCMB/PCMC)</option>
+<option>Commerce (CEBA/SEBA)</option>
+<option>Arts (HEPS)</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-primary">Last School Attended</label>
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="School name" type="text">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-primary">Message / Specific Queries</label>
+<textarea class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="How can we help you?" rows="3"></textarea>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary-container transition-colors shadow-lg shadow-primary/20" type="submit">Submit Enquiry</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="py-32 max-w-3xl mx-auto px-margin-mobile md:px-0">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Common Questions</h2>
+<p class="text-on-surface-variant">Everything you need to know about joining RDS Independent PU College for <span class="font-bold">2026-27</span>.</p>
+</div>
+<div class="space-y-4" id="faq-accordion">
+<!-- FAQ 1 -->
+<div class="border border-outline-variant rounded-2xl overflow-hidden bg-white">
+<button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-surface-container transition-colors" onclick="toggleFaq(this)">
+<span class="font-headline-md text-primary">What are the eligibility criteria for admission?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-8">
+<p class="py-6 text-on-surface-variant font-body-md border-t border-outline-variant">Students must have successfully completed 10th Standard / SSLC or equivalent from a recognized board. Minimum percentage requirements vary by stream and are subject to the year's cutoff.</p>
+</div>
+</div>
+<!-- FAQ 2 -->
+<div class="border border-outline-variant rounded-2xl overflow-hidden bg-white">
+<button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-surface-container transition-colors" onclick="toggleFaq(this)">
+<span class="font-headline-md text-primary">Does the college offer integrated coaching for CET/JEE/NEET?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-8">
+<p class="py-6 text-on-surface-variant font-body-md border-t border-outline-variant">Yes, we offer specialized integrated coaching with top-tier faculty to prepare students for national and state-level competitive exams alongside the regular PU curriculum.</p>
+</div>
+</div>
+<!-- FAQ 3 -->
+<div class="border border-outline-variant rounded-2xl overflow-hidden bg-white">
+<button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-surface-container transition-colors" onclick="toggleFaq(this)">
+<span class="font-headline-md text-primary">What is the fee structure for the current year?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-8">
+<p class="py-6 text-on-surface-variant font-body-md border-t border-outline-variant">The fee structure varies by stream and selected combinations. Please download our prospectus or contact our admissions office for the detailed fee break-up for the 2026-27 session.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Support Floating UI -->
+<div class="fixed bottom-10 right-10 z-50 flex flex-col gap-4">
+<a class="bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center" href="https://wa.me/#">
+<svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.435 5.711 1.435h.008c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+</a>
+</div>
+<!-- Accreditation Ribbon -->
+<div class="w-full bg-surface-container-high py-4 border-y border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2 font-bold text-primary">
+<span class="material-symbols-outlined text-3xl">verified</span>
+<span class="">NAAC A+ ACCREDITED</span>
+</div>
+<div class="flex items-center gap-2 font-bold text-primary">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+<span class="">ISO 9001:2015</span>
+</div>
+<div class="flex items-center gap-2 font-bold text-primary">
+<span class="material-symbols-outlined text-3xl">military_tech</span>
+<span class="">UGC RECOGNIZED</span>
+</div>
+<div class="flex items-center gap-2 font-bold text-primary">
+<span class="material-symbols-outlined text-3xl">rewarded_ads</span>
+<span class="">AICTE APPROVED</span>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary">
+<div class="flex flex-col md:flex-row justify-between items-start max-w-container-max mx-auto px-margin-desktop py-margin-desktop gap-12">
+<div class="max-w-md">
+<a class="font-headline-md text-headline-md text-secondary-fixed mb-4 inline-block" href="index.html">RDS Independent PU College</a>
+<p class="text-on-primary/70 mb-6">Empowering minds and shaping futures since 2000. Our commitment to holistic education and academic excellence makes us the preferred destination for PU education for the <span class="text-white font-bold">2026-27</span> intake.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors" href="mailto:info@rdscollege.edu">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors" href="tel:+910000000000">
+<span class="material-symbols-outlined text-sm">call</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div>
+<h5 class="font-bold text-white mb-6">Quick Links</h5>
+<ul class="space-y-4 text-on-primary/80"><li class=""><a class="hover:text-secondary-fixed transition-colors" href="index.html">Home</a></li><li class=""><a class="hover:text-secondary-fixed transition-colors" href="about.html">About Us</a></li><li class=""><a class="hover:text-secondary-fixed transition-colors" href="academics.html">Academics</a></li><li class=""><a class="hover:text-secondary-fixed transition-colors" href="admissions.html">Admissions</a></li><li class=""><a class="hover:text-secondary-fixed transition-colors" href="facilities.html">Facilities</a></li></ul>
+</div>
+<div>
+<h5 class="font-bold text-white mb-6">Information</h5>
+<ul class="space-y-4 text-on-primary/80"><li class=""><a class="hover:text-secondary-fixed transition-colors" href="faculty.html">Faculty</a></li><li class=""><a class="hover:text-secondary-fixed transition-colors" href="gallery.html">Gallery</a></li><li class=""><a class="hover:text-secondary-fixed transition-colors" href="news.html">News</a></li><li class=""><a class="hover:text-secondary-fixed transition-colors" href="events.html">Events</a></li><li class=""><a class="hover:text-secondary-fixed transition-colors" href="downloads.html">Downloads</a></li><li class=""><a class="hover:text-secondary-fixed transition-colors" href="contact.html">Contact Us</a></li></ul>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-primary-container text-center text-on-primary/50 font-label-md">
+        Â© 2026 RDS Independent PU College. All rights reserved.
+    </div>
+</footer>
+<script>
+    // Scroll Reveal Logic
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-hidden').forEach(el => observer.observe(el));
+
+    // FAQ Toggle
+    function toggleFaq(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('.material-symbols-outlined');
+        
+        document.querySelectorAll('#faq-accordion > div').forEach(item => {
+            const itemContent = item.querySelector('div');
+            const itemIcon = item.querySelector('.material-symbols-outlined');
+            if (itemContent !== content) {
+                itemContent.style.maxHeight = null;
+                itemIcon.style.transform = 'rotate(0deg)';
+            }
+        });
+
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+</script>
+
+
+</body></html>
