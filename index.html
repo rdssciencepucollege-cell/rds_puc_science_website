@@ -546,10 +546,13 @@
 <div class="md:w-2/5 reveal-element" style="transition-delay: 200ms;">
 <div class="glass-panel bg-white/10 p-8 rounded-3xl border-white/20 backdrop-blur-xl shadow-2xl">
 <h5 class="font-headline-md mb-6 text-xl">Enquire for Coaching</h5>
-<form action="contact.html" class="space-y-4">
-<input class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder:text-white/40 focus:ring-2 focus:ring-secondary-fixed outline-none transition-all" placeholder="Full Name" required="" type="text">
-<input class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder:text-white/40 focus:ring-2 focus:ring-secondary-fixed outline-none transition-all" placeholder="Email Address" required="" type="email">
-<select class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white/60 focus:ring-2 focus:ring-secondary-fixed outline-none bg-primary cursor-pointer transition-all">
+<form action="https://formsubmit.co/rdssciencepucollege@gmail.com" method="POST" class="space-y-4">
+<input type="hidden" name="_subject" value="New Website Coaching Enquiry">
+<input type="hidden" name="_next" value="index.html?submitted=true">
+<input type="hidden" name="_captcha" value="false">
+<input class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder:text-white/40 focus:ring-2 focus:ring-secondary-fixed outline-none transition-all" placeholder="Full Name" required="" type="text" name="full_name">
+<input class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white placeholder:text-white/40 focus:ring-2 focus:ring-secondary-fixed outline-none transition-all" placeholder="Email Address" required="" type="email" name="email">
+<select class="w-full bg-white/5 border border-white/20 rounded-lg p-4 text-white/60 focus:ring-2 focus:ring-secondary-fixed outline-none bg-primary cursor-pointer transition-all" name="stream" required>
 <option>Select Stream</option>
 <option>NEET Focus</option>
 <option>JEE Focus</option>

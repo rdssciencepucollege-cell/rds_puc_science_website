@@ -673,6 +673,8 @@ II PUC Biology
 <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Access Study Materials</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mb-8">Please provide your contact details to access our study materials. Your information will be kept confidential.</p>
 <form id="contactForm" class="space-y-6">
+<input type="hidden" name="_subject" value="New Study Materials Access Request">
+<input type="hidden" name="_captcha" value="false">
 <div>
 <label class="block font-label-lg text-label-lg text-on-surface mb-2">Full Name *</label>
 <input type="text" name="fullName" class="form-input" placeholder="Enter your full name" required/>
@@ -717,11 +719,20 @@ II PUC Biology
             }
         });
         
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData);
-            
+
+            const response = await fetch('https://formsubmit.co/ajax/rdssciencepucollege@gmail.com', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            });
+            if (!response.ok) {
+                throw new Error('Unable to send contact details');
+            }
+
             // Store contact info in localStorage
             localStorage.setItem('studentContact', JSON.stringify(data));
             
