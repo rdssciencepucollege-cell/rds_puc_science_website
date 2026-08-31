@@ -126,7 +126,7 @@
 </div>
 <!-- TopNavBar -->
 <header class="sticky top-0 w-full z-[100] bg-glass-fill backdrop-blur-md border-b border-glass-border shadow-sm">
-<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-20">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
 <a class="font-headline-md text-headline-md font-bold text-primary" href="index.html">RDS Independent PU College</a>
 <div class="hidden md:flex items-center gap-8">
 <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="index.html">Home</a>
@@ -142,10 +142,26 @@
 <a class="font-label-lg text-label-lg text-secondary font-bold transition-colors duration-300 transition-transform active:scale-95" aria-current="page" href="contact.html">Contact</a>
 <a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-lg hover:scale-105 transition-all shadow-md inline-block" href="admissions.html">Apply Now</a>
 </div>
-<button class="md:hidden text-primary">
+<button class="md:hidden text-primary" data-mobile-menu-toggle aria-expanded="false" aria-controls="mobile-menu" type="button">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden bg-white/95 border-t border-glass-border backdrop-blur-md">
+<div class="flex flex-col items-start gap-3 py-4 px-margin-mobile">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="index.html">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="about.html">About</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="academics.html">Academics</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="admissions.html">Admissions</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="facilities.html">Facilities</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="faculty.html">Faculty</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="gallery.html">Gallery</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="news.html">News</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="events.html">Events</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="downloads.html">Downloads</a>
+<a class="font-label-lg text-label-lg text-secondary font-bold transition-colors duration-300" aria-current="page" href="contact.html">Contact</a>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-lg hover:scale-105 transition-all shadow-md inline-block" href="admissions.html">Apply Now</a>
+</div>
+</div>
 </header>
 <main class="pt-24">
 <!-- Hero Section -->
@@ -157,7 +173,7 @@
 </div>
 </section>
 <!-- Main Content Grid -->
-<section class="max-w-container-max mx-auto px-margin-desktop py-20 -mt-20 relative z-20">
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 -mt-20 relative z-20">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 <!-- Left Column: Form -->
 <div class="lg:col-span-7 glass-card rounded-xl p-8 md:p-12 shadow-xl transition-all duration-500 opacity-90 hover:shadow-2xl">
@@ -276,7 +292,7 @@
 </div>
 </section>
 <!-- Map Section -->
-<section class="max-w-container-max mx-auto px-margin-desktop pb-20">
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-20">
 <div class="glass-card rounded-2xl overflow-hidden shadow-2xl relative h-[500px] border-2 border-primary/10">
 <div class="absolute inset-0 bg-surface-dim/20" style="background-image: url('images/rds-rightwing-building.png')"></div>
 <!-- Mock Map UI -->
@@ -291,7 +307,7 @@
 </div>
 </section>
 <!-- FAQ Quick Links -->
-<section class="bg-surface-container-low py-20 px-margin-desktop">
+<section class="bg-surface-container-low py-20 px-margin-mobile md:px-margin-desktop">
 <div class="max-w-container-max mx-auto">
 <div class="text-center mb-12">
 <h2 class="font-headline-lg text-primary">Need Instant Answers?</h2>
@@ -318,15 +334,15 @@
 </section>
 </main>
 <!-- WhatsApp FAB -->
-<a class="fixed bottom-8 right-8 z-[60] bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center gap-3 hover:scale-110 active:scale-90 transition-all group overflow-hidden" href="https://wa.me/918312400000" target="_blank">
-<span class="font-bold max-w-0 group-hover:max-w-[200px] transition-all duration-500 whitespace-nowrap overflow-hidden">WhatsApp Admission Support</span>
+<a class="fixed bottom-4 right-4 z-[60] bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl flex items-center gap-3 hover:scale-110 active:scale-90 transition-all group overflow-hidden sm:bottom-8 sm:right-8 sm:p-4" href="https://wa.me/919886565627?text=Hi%20RDS%20Independent%20PU%20College%2C%20I%20need%20help%20with%20admissions." target="_blank" rel="noopener">
+<span class="hidden sm:inline font-bold max-w-0 sm:group-hover:max-w-[200px] transition-all duration-500 whitespace-nowrap overflow-hidden">WhatsApp Admission Support</span>
 <svg fill="currentColor" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
 <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217s.231.006.332.013c.105.007.25.013.391.357.144.354.491 1.198.534 1.285.043.087.072.188.014.303-.058.116-.087.188-.173.289-.087.101-.182.226-.26.303-.094.094-.192.197-.083.383.109.186.484.798 1.038 1.291.714.634 1.314.832 1.502.925.188.094.296.078.405-.045.109-.123.462-.534.585-.715.123-.181.246-.152.412-.091.166.062 1.054.497 1.235.587.181.089.303.134.347.209.044.075.044.436-.101.841z"></path>
 </svg>
 </a>
 <!-- Footer -->
 <footer class="bg-primary dark:bg-gradient-end w-full mt-auto">
-<div class="flex flex-col md:flex-row justify-between items-start gap-gutter px-margin-desktop py-20 max-w-container-max mx-auto text-on-primary">
+<div class="flex flex-col md:flex-row justify-between items-start gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto text-on-primary">
 <div class="max-w-md">
 <a class="font-headline-lg text-headline-lg font-bold text-secondary-fixed mb-6 block" href="index.html">RDS IPUC</a>
 <p class="text-primary-fixed-dim font-body-md mb-8">Nurturing excellence through value-based education since 2000. In strategic partnership with Vidvat Academy for competitive excellence in NEET, JEE, and KCET.</p>
@@ -402,8 +418,18 @@
         });
 
     </script>
-
-
-
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.querySelector('[data-mobile-menu-toggle]');
+            const menu = document.getElementById('mobile-menu');
+            if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+                    toggle.setAttribute('aria-expanded', String(!isOpen));
+                    menu.classList.toggle('hidden');
+                    toggle.innerHTML = isOpen ? '<span class="material-symbols-outlined">menu</span>' : '<span class="material-symbols-outlined">close</span>';
+                });
+            }
+        });
+    </script>
 </body></html>
