@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owner Recovery | RDS Independent PU College</title>
+    <style>
+      :root {
+        --bg: #081a2d;
+        --panel: rgba(10, 27, 46, 0.9);
+        --panel-border: rgba(167, 200, 255, 0.2);
+        --primary: #a7c8ff;
+        --primary-strong: #d5e3ff;
+        --text: #edf4ff;
+        --muted: #b9c8db;
+        --danger: #ff7a7a;
+        --success: #84f5a1;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Inter, Segoe UI, sans-serif;
+        background: radial-gradient(circle at top, rgba(25, 58, 104, 0.8), transparent 35%), linear-gradient(135deg, #061623 0%, #0b1b2d 35%, #081a2d 100%);
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 16px;
+      }
+      .shell {
+        width: min(92vw, 760px);
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: 20px;
+        box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
+        padding: 32px 24px;
+      }
+      h1 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 2.6rem); }
+      p, li { color: var(--muted); line-height: 1.7; }
+      ol { padding-left: 22px; }
+      .success {
+        display: inline-flex;
+        margin-top: 18px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(148, 250, 129, 0.08);
+        border: 1px solid rgba(148, 250, 129, 0.2);
+        color: var(--success);
+        font-weight: 700;
+      }
+      a {
+        color: var(--primary-strong);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <div class="eyebrow" style="display:inline-block; font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--primary); margin-bottom: 16px;">Recovery</div>
+      <h1>Owner recovery checklist</h1>
+      <p>Use this secure procedure if the admin credentials are lost, suspected to be compromised, or need to be rotated.</p>
+      <ol>
+        <li>Verify ownership through the official college contact channels and confirm the site admin is the rightful owner.</li>
+        <li>Update the admin password in the server environment, not in the repository or in public files.</li>
+        <li>Regenerate the site secret key and rotate any related credentials used for maintenance access.</li>
+        <li>Review the server logs and last successful login times for suspicious access.</li>
+        <li>Keep the private admin URL unlisted and restrict it to trusted devices only.</li>
+      </ol>
+      <div class="success">Recommended: use a strong password manager and rotate credentials every few months.</div>
+      <p style="margin-top: 20px;"><a href="{{ url_for('admin_login') }}">Back to login</a></p>
+    </main>
+  </body>
+</html>

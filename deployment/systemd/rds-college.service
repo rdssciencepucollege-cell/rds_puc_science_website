@@ -1,0 +1,16 @@
+[Unit]
+Description=RDS College Website Gunicorn Service
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/rds_puc_science_website
+Environment="PATH=/var/www/rds_puc_science_website/.venv/bin"
+EnvironmentFile=/var/www/rds_puc_science_website/.env
+ExecStart=/var/www/rds_puc_science_website/.venv/bin/gunicorn wsgi:app --bind 127.0.0.1:8000 --workers 2 --threads 4 --access-logfile /var/log/rds-college/access.log --error-logfile /var/log/rds-college/error.log
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
