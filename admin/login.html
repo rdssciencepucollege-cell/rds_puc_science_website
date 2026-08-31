@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login | RDS Independent PU College</title>
+    <style>
+      :root {
+        --bg: #081a2d;
+        --panel: rgba(10, 27, 46, 0.9);
+        --panel-border: rgba(167, 200, 255, 0.2);
+        --primary: #a7c8ff;
+        --primary-strong: #d5e3ff;
+        --accent: #94fa81;
+        --text: #edf4ff;
+        --muted: #b9c8db;
+        --danger: #ff7a7a;
+        --success: #84f5a1;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: Inter, Segoe UI, sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(25, 58, 104, 0.8), transparent 35%),
+          linear-gradient(135deg, #061623 0%, #0b1b2d 35%, #081a2d 100%);
+        color: var(--text);
+      }
+
+      .shell {
+        width: min(92vw, 440px);
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: 20px;
+        box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
+        padding: 32px 24px;
+        backdrop-filter: blur(12px);
+      }
+
+      .eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: clamp(1.8rem, 5vw, 2.4rem);
+      }
+
+      .intro {
+        color: var(--muted);
+        margin: 0 0 26px;
+        line-height: 1.6;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--primary-strong);
+      }
+
+      input {
+        width: 100%;
+        padding: 13px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(167, 200, 255, 0.24);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+        margin-bottom: 18px;
+        font-size: 1rem;
+      }
+
+      input:focus {
+        outline: 2px solid rgba(167, 200, 255, 0.4);
+        border-color: rgba(167, 200, 255, 0.6);
+      }
+
+      button {
+        width: 100%;
+        border: none;
+        background: linear-gradient(135deg, var(--primary), #6fa5ff);
+        color: #081a2d;
+        font-weight: 800;
+        padding: 14px 18px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 0.98rem;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        box-shadow: 0 12px 24px rgba(133, 177, 255, 0.2);
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+      }
+
+      .error {
+        min-height: 20px;
+        margin-top: 10px;
+        color: var(--danger);
+        font-size: 0.94rem;
+      }
+
+      .meta {
+        margin-top: 18px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+
+      .meta a {
+        color: var(--primary-strong);
+        text-decoration: none;
+      }
+
+      .badge {
+        margin-top: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(148, 250, 129, 0.08);
+        border: 1px solid rgba(148, 250, 129, 0.22);
+        color: var(--success);
+        padding: 8px 10px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <div class="eyebrow">Private Maintenance</div>
+      <h1>Owner access</h1>
+      <p class="intro">This private area is not linked publicly. Use the verified owner credentials for the site dashboard.</p>
+
+      <form id="adminLoginForm" novalidate>
+        <div>
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" autocomplete="username" required />
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+        </div>
+
+        <button type="submit">Access dashboard</button>
+        <div id="loginError" class="error" aria-live="polite"></div>
+      </form>
+
+      <div class="meta">
+        <span>Private URL: /admin</span>
+        <a href="recovery.html">Recovery</a>
+      </div>
+
+      <div class="badge">Protected by owner-only access</div>
+    </main>
+
+    <script>
+      const ADMIN_CREDENTIALS = {
+        username: 'owner',
+        password: 'ChangeMe-StrongPassword-Now'
+      };
+
+      const sessionKey = 'rds-admin-auth';
+
+      if (sessionStorage.getItem(sessionKey) === 'authenticated') {
+        window.location.href = 'dashboard.html';
+      }
+
+      const form = document.getElementById('adminLoginForm');
+      const errorBox = document.getElementById('loginError');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value;
+
+        if (!username || !password) {
+          errorBox.textContent = 'Please enter both username and password.';
+          return;
+        }
+
+        if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+          sessionStorage.setItem(sessionKey, 'authenticated');
+          window.location.href = 'dashboard.html';
+        } else {
+          errorBox.textContent = 'Invalid credentials. Please verify your owner login details.';
+        }
+      });
+    </script>
+  </body>
+</html>
