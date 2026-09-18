@@ -155,8 +155,7 @@
 <div class="flex flex-wrap gap-3 justify-center md:justify-start">
 <button class="dept-btn px-6 py-2 rounded-full border border-primary text-primary font-label-lg bg-white hover:bg-primary hover:text-on-primary transition-all active:scale-95" onclick="filterDept('all', this)">All Departments</button>
 <button class="dept-btn px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-lg bg-white hover:border-primary hover:text-primary transition-all" onclick="filterDept('science', this)">Science</button>
-<button class="dept-btn px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-lg bg-white hover:border-primary hover:text-primary transition-all" onclick="filterDept('commerce', this)">Commerce</button>
-<button class="dept-btn px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-lg bg-white hover:border-primary hover:text-primary transition-all" onclick="filterDept('arts', this)">Arts</button>
+<button class="dept-btn px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-lg bg-white hover:border-primary hover:text-primary transition-all" onclick="filterDept('arts-commerce', this)">Arts &amp; Commerce</button>
 </div>
 <div class="relative w-full md:w-80 group">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
@@ -165,13 +164,13 @@
 </div>
 </section>
 <!-- Faculty Bento Grid -->
-<section class="py-24 bg-surface-base">
+<section class="py-24 bg-surface-base" style="display: none;">
 <div class="max-w-container-max mx-auto px-margin-desktop">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="faculty-grid">
 <!-- Faculty Card 1 - Science (Head) -->
 <div class="faculty-card glass-panel rounded-2xl overflow-hidden flex flex-col shadow-xl group transition-all duration-500 hover:-translate-y-2 lg:col-span-2 lg:flex-row h-full border-white/40 duration-700 opacity-100 translate-y-0" data-dept="science">
 <div class="lg:w-2/5 relative overflow-hidden h-64 lg:h-full">
-<img class="faculty-image w-full h-full object-cover transition-transform duration-700" data-alt="A professional studio portrait of a senior male professor with grey hair and glasses, wearing a dark navy academic suit, smiling warmly. The background is a soft-focus library with leather-bound books. High-end editorial lighting, 8k resolution, prestigious academic atmosphere with deep blues and warm gold tones." src="images/vid-teach-collage-hori.png">
+<img class="faculty-image w-full h-full object-cover transition-transform duration-700" data-drive-name="faculty-rajesh-varma.jpg" data-alt="A professional studio portrait of a senior male professor with grey hair and glasses, wearing a dark navy academic suit, smiling warmly. The background is a soft-focus library with leather-bound books. High-end editorial lighting, 8k resolution, prestigious academic atmosphere with deep blues and warm gold tones." src="images/vid-teach-collage-hori.png">
 <div class="absolute top-4 left-4">
 <span class="px-3 py-1 bg-primary text-on-primary text-label-md rounded-md uppercase tracking-wider font-bold">HOD Science</span>
 </div>
@@ -201,7 +200,7 @@
 <!-- Faculty Card 2 - Commerce -->
 <div class="faculty-card glass-panel rounded-2xl overflow-hidden flex flex-col shadow-lg border-white/40 transition-all duration-700 opacity-100 translate-y-0" data-dept="commerce">
 <div class="relative h-72 overflow-hidden">
-<img class="faculty-image w-full h-full object-cover transition-transform duration-700" data-alt="A medium shot of a professional woman in her late 30s, wearing a tailored cream blazer, holding a tablet and smiling confidently in a modern glass-walled office environment. The lighting is bright and airy, reflecting a premium light-mode corporate aesthetic. Soft blue and gold accents in the environment. Sophisticated and approachable academic vibe." src="images/vid-teaching-bio-vert.png">
+<img class="faculty-image w-full h-full object-cover transition-transform duration-700" data-drive-name="faculty-ananya-iyer.jpg" data-alt="A medium shot of a professional woman in her late 30s, wearing a tailored cream blazer, holding a tablet and smiling confidently in a modern glass-walled office environment. The lighting is bright and airy, reflecting a premium light-mode corporate aesthetic. Soft blue and gold accents in the environment. Sophisticated and approachable academic vibe." src="images/vid-teaching-bio-vert.png">
 <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent">
 <span class="text-white text-label-md font-bold">NET Qualified</span>
 </div>
@@ -221,7 +220,7 @@
 <!-- Faculty Card 3 - Arts -->
 <div class="faculty-card glass-panel rounded-2xl overflow-hidden flex flex-col shadow-lg border-white/40 transition-all duration-700 opacity-100 translate-y-0" data-dept="arts">
 <div class="relative h-72 overflow-hidden">
-<img class="faculty-image w-full h-full object-cover transition-transform duration-700" data-alt="A portrait of an elderly distinguished scholar with a short beard, wearing a traditional silk vest over a formal white shirt. He is sitting in a sunlit atrium surrounded by green indoor plants. Warm, natural lighting, high-end cultural academic setting. Calm and wise expression. Rich textures and a palette of warm woods and navy blues." src="images/vid-teaching-bio.png">
+<img class="faculty-image w-full h-full object-cover transition-transform duration-700" data-drive-name="faculty-samuel-david.jpg" data-alt="A portrait of an elderly distinguished scholar with a short beard, wearing a traditional silk vest over a formal white shirt. He is sitting in a sunlit atrium surrounded by green indoor plants. Warm, natural lighting, high-end cultural academic setting. Calm and wise expression. Rich textures and a palette of warm woods and navy blues." src="images/vid-teaching-bio.png">
 </div>
 <div class="p-6 flex-1 flex flex-col">
 <span class="text-secondary font-label-md font-bold uppercase tracking-tighter text-xs">Humanities &amp; Sociology</span>
@@ -238,7 +237,7 @@
 <!-- Faculty Card 4 - Science -->
 <div class="faculty-card glass-panel rounded-2xl overflow-hidden flex flex-col shadow-lg border-white/40 transition-all duration-700 opacity-100 translate-y-0" data-dept="science">
 <div class="relative h-72 overflow-hidden">
-<img class="faculty-image w-full h-full object-cover transition-transform duration-700" data-alt="A sharp, professional portrait of a young male scientist in a clean white lab coat standing in front of a high-tech chemistry laboratory. Neon blue highlights from laboratory equipment create a modern, technological feel. The lighting is crisp and cool-toned. Deep navy and sharp whites define the image. Professional and innovative educator look." src="images/vid-teaching-hori.png">
+<img class="faculty-image w-full h-full object-cover transition-transform duration-700" data-drive-name="faculty-sonal-mehta.jpg" data-alt="A sharp, professional portrait of a young male scientist in a clean white lab coat standing in front of a high-tech chemistry laboratory. Neon blue highlights from laboratory equipment create a modern, technological feel. The lighting is crisp and cool-toned. Deep navy and sharp whites define the image. Professional and innovative educator look." src="images/vid-teaching-hori.png">
 </div>
 <div class="p-6 flex-1 flex flex-col">
 <span class="text-secondary font-label-md font-bold uppercase tracking-tighter text-xs">Chemistry</span>
@@ -255,7 +254,7 @@
 <!-- Faculty Card 5 - Commerce -->
 <div class="faculty-card glass-panel rounded-2xl overflow-hidden flex flex-col shadow-lg border-white/40 lg:col-span-2 lg:flex-row transition-all duration-700 opacity-100 translate-y-0" data-dept="commerce">
 <div class="lg:w-1/3 relative h-64 lg:h-auto overflow-hidden">
-<img class="faculty-image w-full h-full object-cover transition-transform duration-700" data-alt="A medium shot of a distinguished woman in professional business attire, standing on a terrace overlooking a modern city skyline at dusk. Warm orange sky meeting deep blue city lights. High-end cinematography style. She exudes leadership and expertise. Corporate excellence theme with academic sophistication. 8k, photorealistic." src="images/college-from-ground.jpg">
+<img class="faculty-image w-full h-full object-cover transition-transform duration-700" data-drive-name="faculty-meenakshi-sundaram.jpg" data-alt="A medium shot of a distinguished woman in professional business attire, standing on a terrace overlooking a modern city skyline at dusk. Warm orange sky meeting deep blue city lights. High-end cinematography style. Corporate excellence theme with academic sophistication. 8k, photorealistic." src="images/college-from-ground.jpg">
 </div>
 <div class="p-8 lg:w-2/3 flex flex-col justify-center">
 <span class="text-secondary font-label-lg font-bold uppercase text-xs">Business Studies</span>
@@ -323,6 +322,38 @@
 </div>
 </div>
 </section>
+<section class="py-24 bg-surface-base">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="mb-14">
+<p class="text-secondary font-label-lg uppercase tracking-widest font-bold mb-3">Science</p>
+<h2 class="font-headline-lg text-headline-lg text-primary">Board Exam Faculty</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+<div class="faculty-card glass-panel rounded-2xl overflow-hidden shadow-lg" data-dept="science"><img class="faculty-image w-full h-72 object-cover" data-drive-name="niranjan.jpg" src="https://lh3.googleusercontent.com/d/1sukr3evf3DvozU0KgCkGtgSBbPOUvk3w=w1600" alt="Niranjan Iragar, Biology Lecturer"><div class="p-6"><h3 class="font-headline-md text-headline-md text-primary">Niranjan Iragar</h3><p class="text-secondary font-label-md font-bold uppercase">Biology Lecturer</p><p class="text-outline font-label-md mt-2">M.Sc Botany, KSET Qualified</p></div></div>
+<div class="faculty-card glass-panel rounded-2xl overflow-hidden shadow-lg" data-dept="science"><img class="faculty-image w-full h-72 object-cover" data-drive-name="laxmi.jpg" src="https://lh3.googleusercontent.com/d/1UeotHtSV9Dm9fH59GZCnF-XQB9sW1KDT=w1600" alt="Laxmi Sarapure, Physics Lecturer"><div class="p-6"><h3 class="font-headline-md text-headline-md text-primary">Laxmi Sarapure</h3><p class="text-secondary font-label-md font-bold uppercase">Physics Lecturer</p><p class="text-outline font-label-md mt-2">M.Sc Physics</p></div></div>
+<div class="faculty-card glass-panel rounded-2xl overflow-hidden shadow-lg" data-dept="science"><img class="faculty-image w-full h-72 object-cover" data-drive-name="sagar.jpg" src="https://lh3.googleusercontent.com/d/1TXGiYJXkQllC8y_1dOD-cyC7dZXh9lFa=w1600" alt="Sagar Kalliguddi, Chemistry Lecturer"><div class="p-6"><h3 class="font-headline-md text-headline-md text-primary">Sagar Kalliguddi</h3><p class="text-secondary font-label-md font-bold uppercase">Chemistry Lecturer</p><p class="text-outline font-label-md mt-2">M.Sc Chemistry, KSET Qualified</p></div></div>
+<div class="faculty-card glass-panel rounded-2xl overflow-hidden shadow-lg" data-dept="science"><img class="faculty-image w-full h-72 object-cover" data-drive-name="annisa.jpg" src="https://lh3.googleusercontent.com/d/1WXZLN9EMjd2LlNgqkXSQdGuXAAYa6EHj=w1600" alt="Annisa Jamadar, Maths Lecturer"><div class="p-6"><h3 class="font-headline-md text-headline-md text-primary">Annisa Jamadar</h3><p class="text-secondary font-label-md font-bold uppercase">Maths Lecturer</p><p class="text-outline font-label-md mt-2">M.Sc Mathematics</p></div></div>
+</div>
+<div class="mb-14">
+<p class="text-secondary font-label-lg uppercase tracking-widest font-bold mb-3">Science</p>
+<h2 class="font-headline-lg text-headline-lg text-primary">NEET / JEE / CUET Faculty</h2>
+<p class="text-on-surface-variant font-body-lg mt-3">Vidvat Academy competitive-exam faculty.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+<div class="faculty-card glass-panel rounded-2xl overflow-hidden shadow-lg" data-dept="science"><img class="faculty-image w-full h-72 object-cover" data-drive-name="praveen-sapare.jpeg" src="https://lh3.googleusercontent.com/d/14PUVRksEkMhMgOOKNkeqLo3BZTFAggn5=w1600" alt="Praveen Sapare, Founder"><div class="p-6"><h3 class="font-headline-md text-headline-md text-primary">Praveen Sapare</h3><p class="text-secondary font-label-md font-bold uppercase">Founder, Vidvat Academy</p><p class="text-outline font-label-md mt-2">IIT Graduate</p></div></div>
+<div class="faculty-card glass-panel rounded-2xl overflow-hidden shadow-lg" data-dept="science"><img class="faculty-image w-full h-72 object-cover" data-drive-name="siddappa-g.jpg" src="https://lh3.googleusercontent.com/d/1jQSXMSRaxlBp5vMgAdkQbDicNwIfyJT_=w1600" alt="Siddappa Gowda, Academic Head"><div class="p-6"><h3 class="font-headline-md text-headline-md text-primary">Siddappa Gowda</h3><p class="text-secondary font-label-md font-bold uppercase">Academic Head</p><p class="text-outline font-label-md mt-2">20+ years experienced Maths faculty, CBSE</p></div></div>
+<div class="faculty-card glass-panel rounded-2xl overflow-hidden shadow-lg" data-dept="science"><img class="faculty-image w-full h-72 object-cover" data-drive-name="sudhakar.jpg" src="https://lh3.googleusercontent.com/d/1Kaw7N2OuHKOo-gYhpPUuXjAPl7TTILpg=w1600" alt="Sudhakar M., Biology Faculty"><div class="p-6"><h3 class="font-headline-md text-headline-md text-primary">Sudhakar M.</h3><p class="text-secondary font-label-md font-bold uppercase">Biology Faculty</p><p class="text-outline font-label-md mt-2">15+ years of experience</p></div></div>
+<div class="faculty-card glass-panel rounded-2xl overflow-hidden shadow-lg" data-dept="science"><img class="faculty-image w-full h-72 object-cover" data-drive-name="amitabh-b.jpeg" src="https://lh3.googleusercontent.com/d/1ljYJ_2N_wLNzxS1xEObc9-IekAY49MLI=w1600" alt="Amitabha Chatterjee, Physics Faculty"><div class="p-6"><h3 class="font-headline-md text-headline-md text-primary">Amitabha Chatterjee</h3><p class="text-secondary font-label-md font-bold uppercase">Physics Faculty</p><p class="text-outline font-label-md mt-2">NIT Suratkal</p></div></div>
+<div class="faculty-card glass-panel rounded-2xl overflow-hidden shadow-lg" data-dept="science"><img class="faculty-image w-full h-72 object-cover" data-drive-name="mubashira.jpg" src="https://lh3.googleusercontent.com/d/13K9DW2XzNtpvJ1u5Nd3ccGisDw3UI_Fd=w1600" alt="Mubashira, Chemistry Faculty"><div class="p-6"><h3 class="font-headline-md text-headline-md text-primary">Mubashira</h3><p class="text-secondary font-label-md font-bold uppercase">Chemistry Faculty</p><p class="text-outline font-label-md mt-2">NIT Suratkal</p></div></div>
+<div class="faculty-card glass-panel rounded-2xl overflow-hidden shadow-lg" data-dept="science"><img class="faculty-image w-full h-72 object-cover" data-drive-name="ritik-p.jpeg" src="https://lh3.googleusercontent.com/d/1YVfu6fGuvUXB98rdMnGx77uqS6RAEogj=w1600" alt="Ritik Paunikar, Maths Faculty"><div class="p-6"><h3 class="font-headline-md text-headline-md text-primary">Ritik Paunikar</h3><p class="text-secondary font-label-md font-bold uppercase">Maths Faculty</p><p class="text-outline font-label-md mt-2">NIT Nagpur</p></div></div>
+</div>
+<div class="mb-8">
+<p class="text-secondary font-label-lg uppercase tracking-widest font-bold mb-3">Arts &amp; Commerce</p>
+<h2 class="font-headline-lg text-headline-lg text-primary">Arts &amp; Commerce Faculty</h2>
+<p class="text-on-surface-variant font-body-lg mt-3">Faculty profiles will be added here as their photographs and details are uploaded.</p>
+</div>
+</div>
+</section>
 <!-- Footer -->
 <footer class="w-full py-16 px-margin-desktop flex flex-col items-center gap-gutter bg-primary text-on-primary border-t border-glass-border">
 <div class="max-w-container-max w-full grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -357,6 +388,7 @@
 </div>
 </div>
 </footer>
+<script src="drive-images.js?v=20260918"></script>
 <script>
         function filterDept(dept, currentButton) {
             const cards = document.querySelectorAll('.faculty-card');
