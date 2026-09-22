@@ -50,6 +50,31 @@
         galleryGrid.replaceChildren(...galleryImages.map(createGalleryItem));
     }
 
+    function applyGalleryHighlights(images) {
+        const slides = document.querySelectorAll('[data-gallery-slide]');
+        if (!slides.length) return;
+
+        const galleryImages = images.filter(image =>
+            image.folder.toLowerCase().includes('/gallery/')
+        );
+        if (!galleryImages.length) return;
+
+        let offset = 0;
+        const updateSlides = () => {
+            slides.forEach((slide, index) => {
+                const image = galleryImages[(offset + index) % galleryImages.length];
+                slide.style.backgroundImage = `url("${getImageUrl(image.url)}")`;
+                slide.dataset.alt = getTitle(image.name);
+            });
+            offset = (offset + 1) % galleryImages.length;
+        };
+
+        updateSlides();
+        if (galleryImages.length > slides.length) {
+            window.setInterval(updateSlides, 5000);
+        }
+    }
+
     function applyFacultyImages(images) {
         const facultyImages = new Map(
             images
@@ -117,6 +142,7 @@
             if (!Array.isArray(images)) throw new Error('Drive image response was not an array');
 
             applyGalleryImages(images);
+            applyGalleryHighlights(images);
             applyFacultyImages(images);
             applyPageImages(images);
         } catch (error) {
