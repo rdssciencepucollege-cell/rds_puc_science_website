@@ -184,27 +184,27 @@
 <input type="hidden" name="_captcha" value="false">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
-<label class="font-label-lg text-on-surface-variant ml-1">Student Name</label>
-<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Enter full name" type="text" name="student_name" required>
+<label for="contact-student-name" class="font-label-lg text-on-surface-variant ml-1">Student Name</label>
+<input id="contact-student-name" autocomplete="name" class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Enter full name" type="text" name="student_name" required>
 </div>
 <div class="space-y-2">
-<label class="font-label-lg text-on-surface-variant ml-1">Parent/Guardian Name</label>
-<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Enter parent name" type="text" name="parent_name" required>
+<label for="contact-parent-name" class="font-label-lg text-on-surface-variant ml-1">Parent/Guardian Name</label>
+<input id="contact-parent-name" autocomplete="name" class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Enter parent name" type="text" name="parent_name" required>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
-<label class="font-label-lg text-on-surface-variant ml-1">Phone Number</label>
-<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="+91 XXXXX XXXXX" type="tel" name="phone" required>
+<label for="contact-phone" class="font-label-lg text-on-surface-variant ml-1">Phone Number</label>
+<input id="contact-phone" autocomplete="tel" inputmode="tel" pattern="[+]?[0-9 ()-]{10,}" class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="+91 XXXXX XXXXX" type="tel" name="phone" required>
 </div>
 <div class="space-y-2">
-<label class="font-label-lg text-on-surface-variant ml-1">Email Address</label>
-<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="name@example.com" type="email" name="email" required>
+<label for="contact-email" class="font-label-lg text-on-surface-variant ml-1">Email Address</label>
+<input id="contact-email" autocomplete="email" class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="name@example.com" type="email" name="email" required>
 </div>
 </div>
 <div class="space-y-2">
-<label class="font-label-lg text-on-surface-variant ml-1">Interested Stream</label>
-<select class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" name="interested_stream" required>
+<label for="contact-stream" class="font-label-lg text-on-surface-variant ml-1">Interested Stream</label>
+<select id="contact-stream" class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" name="interested_stream" required>
 <option>PCMB (Science)</option>
 <option>PCMC (Science)</option>
 <option>CEBA (Commerce)</option>
@@ -212,8 +212,8 @@
 </select>
 </div>
 <div class="space-y-2">
-<label class="font-label-lg text-on-surface-variant ml-1">Your Message</label>
-<textarea class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="How can we help you?" rows="4" name="message" required></textarea>
+<label for="contact-message" class="font-label-lg text-on-surface-variant ml-1">Your Message</label>
+<textarea id="contact-message" class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="How can we help you?" rows="4" name="message" required></textarea>
 </div>
 <button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold text-lg hover:bg-primary-container transition-all shadow-md active:scale-[0.98]" type="submit">
                             Send Message
@@ -370,7 +370,7 @@
 </div>
 </div>
 <div class="border-t border-white/5 py-8 text-center px-margin-desktop">
-<p class="text-primary-fixed-dim text-sm opacity-60">Â© 2026-27 RDS Independent PU College. All Rights Reserved. In Partnership with Vidvat Academy.</p>
+<p class="text-primary-fixed-dim text-sm opacity-60">&copy; 2026-27 RDS Independent PU College. All Rights Reserved. In Partnership with Vidvat Academy.</p>
 </div>
 </footer>
 <script>

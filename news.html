@@ -350,11 +350,14 @@ Contact the college <span class="material-symbols-outlined">arrow_forward</span>
 <p class="font-body-lg text-on-surface-variant">Get a monthly digest of achievements, event invitations, and academic updates delivered directly to your inbox.</p>
 </div>
 <div class="lg:w-1/2 w-full">
-<form class="flex flex-col md:flex-row gap-4 p-2 bg-white rounded-2xl shadow-inner border border-outline-variant">
-<input class="flex-grow px-6 py-4 bg-transparent border-none focus:ring-0 text-primary font-medium" placeholder="Your academic email" required="" type="email">
+<form id="newsletterForm" class="flex flex-col md:flex-row gap-4 p-2 bg-white rounded-2xl shadow-inner border border-outline-variant" action="https://formsubmit.co/ajax/rdssciencepucollege@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New RDS Website Newsletter Subscription">
+<input type="hidden" name="_captcha" value="false">
+<label class="sr-only" for="newsletter-email">Email address</label>
+<input id="newsletter-email" name="email" autocomplete="email" class="flex-grow px-6 py-4 bg-transparent border-none focus:ring-0 text-primary font-medium" placeholder="Your academic email" required="" type="email">
 <button class="bg-primary text-on-primary px-10 py-4 rounded-xl font-bold hover:bg-gradient-start transition-all active:scale-95 shadow-lg" type="submit">Subscribe Now</button>
 </form>
-<p class="text-xs text-on-surface-variant mt-4 opacity-60">* We respect your privacy. Unsubscribe at any time.</p>
+<p id="newsletterStatus" class="text-xs text-on-surface-variant mt-4 opacity-60" role="status" aria-live="polite">We respect your privacy. You can contact us to stop future updates.</p>
 </div>
 </div>
 </div>
@@ -404,7 +407,7 @@ Contact the college <span class="material-symbols-outlined">arrow_forward</span>
 </div>
 </div>
 <div class="border-t border-white/10 px-margin-desktop py-8 max-w-container-max mx-auto text-center md:text-left">
-<p class="text-primary-fixed-dim text-sm opacity-60">Â© 2026-27 RDS Independent PU College. All Rights Reserved. In Partnership with Vidvat Academy.</p>
+<p class="text-primary-fixed-dim text-sm opacity-60">&copy; 2026-27 RDS Independent PU College. All Rights Reserved. In Partnership with Vidvat Academy.</p>
 </div>
 </footer>
 <script>
@@ -424,15 +427,32 @@ Contact the college <span class="material-symbols-outlined">arrow_forward</span>
             });
         }
 
-        // Newsletter form interaction
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const btn = form.querySelector('button');
-                btn.textContent = 'Subscribed!';
-                btn.classList.replace('bg-primary', 'bg-secondary');
-                form.reset();
+        const newsletterForm = document.getElementById('newsletterForm');
+        const newsletterStatus = document.getElementById('newsletterStatus');
+        if (newsletterForm && newsletterStatus) {
+            newsletterForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const button = newsletterForm.querySelector('button[type="submit"]');
+                button.disabled = true;
+                button.textContent = 'Sending...';
+                newsletterStatus.textContent = 'Sending your subscription request...';
+
+                try {
+                    const response = await fetch(newsletterForm.action, {
+                        method: 'POST',
+                        headers: { Accept: 'application/json' },
+                        body: new FormData(newsletterForm)
+                    });
+                    if (!response.ok) throw new Error('Newsletter subscription failed');
+                    newsletterForm.reset();
+                    newsletterStatus.textContent = 'Thank you. Your subscription request has been sent.';
+                } catch (error) {
+                    console.error('Newsletter subscription failed.', error);
+                    newsletterStatus.textContent = 'We could not subscribe you right now. Please email rdssciencepucollege@gmail.com.';
+                } finally {
+                    button.disabled = false;
+                    button.textContent = 'Subscribe Now';
+                }
             });
         }
     </script>

@@ -669,10 +669,14 @@ II PUC Biology
 <div>
 <h4 class="font-headline-md text-headline-md mb-6">Subscribe</h4>
 <p class="font-body-md text-body-md text-on-primary/70 mb-4">Get the latest updates on admissions and events.</p>
-<div class="flex gap-2">
-<input class="bg-white/10 border border-white/20 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-secondary-fixed focus:outline-none" placeholder="Email Address" type="email"/>
-<button class="bg-secondary-fixed text-on-secondary-fixed px-4 py-2 rounded-lg font-bold transition-all hover:bg-secondary-container">Join</button>
-</div>
+<form id="downloadsNewsletterForm" class="flex gap-2" action="https://formsubmit.co/ajax/rdssciencepucollege@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New RDS Website Newsletter Subscription">
+<input type="hidden" name="_captcha" value="false">
+<label class="sr-only" for="downloads-newsletter-email">Email address</label>
+<input id="downloads-newsletter-email" name="email" autocomplete="email" class="bg-white/10 border border-white/20 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-secondary-fixed focus:outline-none" placeholder="Email Address" type="email" required/>
+<button type="submit" class="bg-secondary-fixed text-on-secondary-fixed px-4 py-2 rounded-lg font-bold transition-all hover:bg-secondary-container">Join</button>
+</form>
+<p id="downloadsNewsletterStatus" class="mt-2 text-xs text-on-primary/70" role="status" aria-live="polite"></p>
 </div>
 </div>
 <div class="max-w-container-max mx-auto px-gutter py-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-on-primary/60 font-body-md text-body-md">
@@ -683,28 +687,28 @@ II PUC Biology
 </div>
 </footer>
 <!-- Contact Modal for Study Materials Access -->
-<div class="modal-backdrop" id="contactModal">
+<div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
 <div class="modal-content">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Access Study Materials</h2>
+<h2 id="contactModalTitle" class="font-headline-lg text-headline-lg text-primary mb-2">Access Study Materials</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mb-8">Please provide your contact details to access our study materials. Your information will be kept confidential.</p>
 <form id="contactForm" class="space-y-6">
 <input type="hidden" name="_subject" value="New Study Materials Access Request">
-<input type="hidden" name="_captcha" value="false">
+<p id="contactFormStatus" class="hidden text-sm font-semibold" role="status" aria-live="polite"></p>
 <div>
-<label class="block font-label-lg text-label-lg text-on-surface mb-2">Full Name *</label>
-<input type="text" name="fullName" class="form-input" placeholder="Enter your full name" required/>
+<label for="study-full-name" class="block font-label-lg text-label-lg text-on-surface mb-2">Full Name *</label>
+<input id="study-full-name" type="text" name="fullName" autocomplete="name" class="form-input" placeholder="Enter your full name" required/>
 </div>
 <div>
-<label class="block font-label-lg text-label-lg text-on-surface mb-2">Email Address *</label>
-<input type="email" name="email" class="form-input" placeholder="your.email@example.com" required/>
+<label for="study-email" class="block font-label-lg text-label-lg text-on-surface mb-2">Email Address *</label>
+<input id="study-email" type="email" name="email" autocomplete="email" class="form-input" placeholder="your.email@example.com" required/>
 </div>
 <div>
-<label class="block font-label-lg text-label-lg text-on-surface mb-2">Phone Number *</label>
-<input type="tel" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX" required/>
+<label for="study-phone" class="block font-label-lg text-label-lg text-on-surface mb-2">Phone Number *</label>
+<input id="study-phone" type="tel" name="phone" autocomplete="tel" class="form-input" placeholder="+91 XXXXX XXXXX" required/>
 </div>
 <div>
-<label class="block font-label-lg text-label-lg text-on-surface mb-2">Class/Stream *</label>
-<input type="text" name="classStream" class="form-input" placeholder="e.g., I PUC Biology" required/>
+<label for="study-stream" class="block font-label-lg text-label-lg text-on-surface mb-2">Class/Stream *</label>
+<input id="study-stream" type="text" name="classStream" autocomplete="off" class="form-input" placeholder="e.g., I PUC Biology" required/>
 </div>
 <div class="flex gap-4">
 <button type="button" class="flex-1 py-3 px-4 bg-surface-container text-on-surface rounded-lg font-label-lg hover:bg-surface-container-high transition-colors" onclick="closeContactModal()">Cancel</button>
@@ -719,7 +723,7 @@ II PUC Biology
         let pendingAccessUrl = '';
         
         function openContactModal(url) {
-            pendingAccessUrl = driveFolderUrl;
+            pendingAccessUrl = url || driveFolderUrl;
             document.getElementById('contactModal').classList.add('active');
         }
         
@@ -736,32 +740,67 @@ II PUC Biology
         
         document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData);
+            const form = e.target;
+            const status = document.getElementById('contactFormStatus');
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            status.className = 'text-sm font-semibold text-on-surface-variant';
+            status.textContent = 'Sending your request...';
 
-            const response = await fetch('https://formsubmit.co/ajax/rdssciencepucollege@gmail.com', {
-                method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: formData
-            });
-            if (!response.ok) {
-                throw new Error('Unable to send contact details');
-            }
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/rdssciencepucollege@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: new FormData(form)
+                });
+                if (!response.ok) throw new Error('Unable to send contact details');
 
-            // Store contact info in localStorage
-            localStorage.setItem('studentContact', JSON.stringify(data));
-            
-            // Close modal
-            closeContactModal();
-            
-            // Navigate to the resource
-            if (pendingAccessUrl) {
-                window.location.href = pendingAccessUrl;
+                form.reset();
+                status.className = 'text-sm font-semibold text-green-700';
+                status.textContent = 'Request sent. Opening the study materials...';
+                window.setTimeout(() => {
+                    closeContactModal();
+                    if (pendingAccessUrl) window.location.href = pendingAccessUrl;
+                }, 700);
+            } catch (error) {
+                console.error('Study materials request failed.', error);
+                status.className = 'text-sm font-semibold text-red-700';
+                status.textContent = 'We could not send your request. Please call 9886565627 or email rdssciencepucollege@gmail.com.';
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Continue';
             }
-            
-            // Reset form
-            e.target.reset();
         });
+
+        const downloadsNewsletterForm = document.getElementById('downloadsNewsletterForm');
+        const downloadsNewsletterStatus = document.getElementById('downloadsNewsletterStatus');
+        if (downloadsNewsletterForm && downloadsNewsletterStatus) {
+            downloadsNewsletterForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const button = downloadsNewsletterForm.querySelector('button[type="submit"]');
+                button.disabled = true;
+                button.textContent = '...';
+                downloadsNewsletterStatus.textContent = 'Sending...';
+
+                try {
+                    const response = await fetch(downloadsNewsletterForm.action, {
+                        method: 'POST',
+                        headers: { Accept: 'application/json' },
+                        body: new FormData(downloadsNewsletterForm)
+                    });
+                    if (!response.ok) throw new Error('Newsletter subscription failed');
+                    downloadsNewsletterForm.reset();
+                    downloadsNewsletterStatus.textContent = 'Subscription request sent.';
+                } catch (error) {
+                    console.error('Downloads newsletter subscription failed.', error);
+                    downloadsNewsletterStatus.textContent = 'Could not subscribe. Email rdssciencepucollege@gmail.com.';
+                } finally {
+                    button.disabled = false;
+                    button.textContent = 'Join';
+                }
+            });
+        }
         
         // Smooth scroll active state tracking for sidebar
         const observerOptions = {

@@ -337,35 +337,35 @@
 <input type="hidden" name="_captcha" value="false">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
-<label class="font-label-lg text-primary">Student Name</label>
-<input class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Enter full name" type="text" name="student_name" required>
+<label for="admission-student-name" class="font-label-lg text-primary">Student Name</label>
+<input id="admission-student-name" autocomplete="name" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Enter full name" type="text" name="student_name" required>
 </div>
 <div class="space-y-2">
-<label class="font-label-lg text-primary">Parent's Mobile</label>
-<input class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="+91 00000 00000" type="tel" name="parent_mobile" required>
+<label for="admission-parent-mobile" class="font-label-lg text-primary">Parent's Mobile</label>
+<input id="admission-parent-mobile" autocomplete="tel" inputmode="tel" pattern="[+]?[0-9 ()-]{10,}" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="+91 00000 00000" type="tel" name="parent_mobile" required>
 </div>
 </div>
 <div class="space-y-2">
-<label class="font-label-lg text-primary">Email Address</label>
-<input class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="example@email.com" type="email" name="email" required>
+<label for="admission-email" class="font-label-lg text-primary">Email Address</label>
+<input id="admission-email" autocomplete="email" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="example@email.com" type="email" name="email" required>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
-<label class="font-label-lg text-primary">Preferred Stream</label>
-<select class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all appearance-none bg-white" name="preferred_stream" required>
+<label for="admission-stream" class="font-label-lg text-primary">Preferred Stream</label>
+<select id="admission-stream" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all appearance-none bg-white" name="preferred_stream" required>
 <option>Science (PCMB/PCMC)</option>
 <option>Commerce (CEBA/SEBA)</option>
 <option>Arts (HEPS)</option>
 </select>
 </div>
 <div class="space-y-2">
-<label class="font-label-lg text-primary">Last School Attended</label>
-<input class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="School name" type="text" name="last_school">
+<label for="admission-last-school" class="font-label-lg text-primary">Last School Attended</label>
+<input id="admission-last-school" autocomplete="organization" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="School name" type="text" name="last_school">
 </div>
 </div>
 <div class="space-y-2">
-<label class="font-label-lg text-primary">Message / Specific Queries</label>
-<textarea class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="How can we help you?" rows="3" name="message"></textarea>
+<label for="admission-message" class="font-label-lg text-primary">Message / Specific Queries</label>
+<textarea id="admission-message" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="How can we help you?" rows="3" name="message"></textarea>
 </div>
 <button class="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary-container transition-colors shadow-lg shadow-primary/20" type="submit">Submit Enquiry</button>
 </form>
@@ -474,7 +474,7 @@
 </div>
 </div>
 <div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-primary-container text-center text-on-primary/50 font-label-md">
-        Â© 2026 RDS Independent PU College. All rights reserved.
+        &copy; 2026 RDS Independent PU College. All rights reserved.
     </div>
 </footer>
 <script>
