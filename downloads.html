@@ -687,7 +687,7 @@ II PUC Biology
 </div>
 </footer>
 <!-- Contact Modal for Study Materials Access -->
-<div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+<div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" aria-hidden="true">
 <div class="modal-content">
 <h2 id="contactModalTitle" class="font-headline-lg text-headline-lg text-primary mb-2">Access Study Materials</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mb-8">Please provide your contact details to access our study materials. Your information will be kept confidential.</p>
@@ -720,25 +720,58 @@ II PUC Biology
 <script>
         // Contact Modal Management
         const driveFolderUrl = 'https://drive.google.com/drive/folders/1v1AETrqWlTqpq0RBtRLALwIr5r90o7yF?usp=sharing';
+        const contactModal = document.getElementById('contactModal');
+        const contactForm = document.getElementById('contactForm');
+        const contactModalFocusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
         let pendingAccessUrl = '';
+        let previousActiveElement = null;
         
         function openContactModal(url) {
             pendingAccessUrl = url || driveFolderUrl;
-            document.getElementById('contactModal').classList.add('active');
+            previousActiveElement = document.activeElement;
+            contactModal.classList.add('active');
+            contactModal.setAttribute('aria-hidden', 'false');
+            window.requestAnimationFrame(() => {
+                contactModal.querySelector('input:not([type="hidden"])')?.focus();
+            });
         }
         
         function closeContactModal() {
-            document.getElementById('contactModal').classList.remove('active');
+            contactModal.classList.remove('active');
+            contactModal.setAttribute('aria-hidden', 'true');
             pendingAccessUrl = '';
+            if (previousActiveElement instanceof HTMLElement) previousActiveElement.focus();
+            previousActiveElement = null;
         }
         
-        document.getElementById('contactModal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('contactModal')) {
+        contactModal.addEventListener('click', (e) => {
+            if (e.target === contactModal) {
                 closeContactModal();
             }
         });
+
+        document.addEventListener('keydown', (e) => {
+            if (!contactModal.classList.contains('active')) return;
+            if (e.key === 'Escape') {
+                closeContactModal();
+                return;
+            }
+            if (e.key !== 'Tab') return;
+
+            const focusableElements = [...contactModal.querySelectorAll(contactModalFocusableSelector)];
+            if (!focusableElements.length) return;
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+            if (e.shiftKey && document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            } else if (!e.shiftKey && document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
+        });
         
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const form = e.target;
             const status = document.getElementById('contactFormStatus');
