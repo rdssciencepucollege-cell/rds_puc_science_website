@@ -133,7 +133,7 @@
 <body class="bg-surface-base text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
 <!-- TopNavBar -->
 <header class="sticky top-0 w-full z-[100] bg-glass-fill backdrop-blur-md border-b border-glass-border shadow-sm">
-<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-20">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
 <a class="font-headline-md text-headline-md font-bold text-primary" href="index.html">RDS Independent PU College</a>
 <div class="hidden md:flex items-center gap-8">
 <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="index.html">Home</a>
@@ -149,11 +149,26 @@
 <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="contact.html">Contact</a>
 <a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-lg hover:scale-105 transition-all shadow-md inline-block" href="admissions.html">Apply Now</a>
 </div>
-<button class="md:hidden text-primary">
+<button class="md:hidden text-primary" data-mobile-menu-toggle aria-expanded="false" aria-controls="mobile-menu" type="button">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </nav>
-</header>
+<div id="mobile-menu" class="hidden md:hidden bg-white/95 border-t border-glass-border backdrop-blur-md">
+<div class="flex flex-col items-start gap-3 py-4 px-margin-mobile">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="index.html">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="about.html">About</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="academics.html">Academics</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="admissions.html">Admissions</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="facilities.html">Facilities</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="faculty.html">Faculty</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="gallery.html">Gallery</a>
+<a class="font-label-lg text-label-lg text-secondary font-bold transition-colors duration-300" aria-current="page" href="news.html">News</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="events.html">Events</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="downloads.html">Downloads</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="contact.html">Contact</a>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-lg hover:scale-105 transition-all shadow-md inline-block" href="admissions.html">Apply Now</a>
+</div>
+</div>
 </header>
 <main class="pt-20">
 <!-- Hero Section -->
@@ -357,14 +372,23 @@ Contact the college <span class="material-symbols-outlined">arrow_forward</span>
 <a class="hover:text-secondary-fixed transition-colors" href="mailto:rdssciencepucollege@gmail.com">rdssciencepucollege@gmail.com</a>
 <a class="hover:text-secondary-fixed transition-colors" href="tel:+919886565627">9886565627</a>
 </div>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-container transition-colors group" href="https://maps.app.goo.gl/4o1L17NLaKxrf8Cu8?g_st=ac" target="_blank" rel="noopener">
+<div class="flex flex-wrap gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-container transition-colors group" href="https://maps.app.goo.gl/4o1L17NLaKxrf8Cu8?g_st=ac" target="_blank" rel="noopener" aria-label="Open map directions">
 <span class="material-symbols-outlined text-white group-hover:text-primary">language</span>
 </a>
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-container transition-colors group" href="https://wa.me/919886565627?text=Hi%20RDS%20Independent%20PU%20College%2C%20I%20need%20help%20with%20admissions." target="_blank" rel="noopener">
-<span class="material-symbols-outlined text-white group-hover:text-primary">school</span>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-container transition-colors group" href="https://wa.me/919886565627?text=Hi%20RDS%20Independent%20PU%20College%2C%20I%20need%20help%20with%20admissions." target="_blank" rel="noopener" aria-label="WhatsApp">
+<span class="material-symbols-outlined text-white group-hover:text-primary">chat</span>
 </a>
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-container transition-colors group" href="mailto:rdssciencepucollege@gmail.com">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-container transition-colors group" href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=aumzex2" target="_blank" rel="noopener" aria-label="Instagram">
+<span class="material-symbols-outlined text-white group-hover:text-primary">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-container transition-colors group" href="https://www.facebook.com/profile.php?id=61594579027045" target="_blank" rel="noopener" aria-label="Facebook">
+<span class="material-symbols-outlined text-white group-hover:text-primary">groups</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-container transition-colors group" href="https://www.youtube.com/@RDS_PU_SCIENCE_COLLEGE_MUDALAG" target="_blank" rel="noopener" aria-label="YouTube">
+<span class="material-symbols-outlined text-white group-hover:text-primary">play_circle</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-container transition-colors group" href="mailto:rdssciencepucollege@gmail.com" aria-label="Email us">
 <span class="material-symbols-outlined text-white group-hover:text-primary">mail</span>
 </a>
 </div>
@@ -416,4 +440,24 @@ Contact the college <span class="material-symbols-outlined">arrow_forward</span>
 <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2"><button class="bg-primary text-on-primary py-4 px-2 rounded-l-xl shadow-2xl flex flex-col items-center gap-2 hover:bg-secondary transition-all group"><span class="material-symbols-outlined">contact_support</span><span class="[writing-mode:vertical-lr] font-bold tracking-widest uppercase text-xs">Quick Enquiry</span></button></div>
 
 <script src="drive-images.js?v=20260918"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('[data-mobile-menu-toggle]');
+    const menu = document.getElementById('mobile-menu');
+    if (!toggle || !menu) return;
+    toggle.addEventListener('click', function () {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      menu.classList.toggle('hidden');
+      toggle.innerHTML = isOpen ? '<span class="material-symbols-outlined">menu</span>' : '<span class="material-symbols-outlined">close</span>';
+    });
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.innerHTML = '<span class="material-symbols-outlined">menu</span>';
+      });
+    });
+  });
+</script>
 </body></html>

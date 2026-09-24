@@ -148,6 +148,84 @@
             opacity: 1;
             margin-right: 12px;
         }
+        @media (max-width: 767px) {
+            #hero-gallery {
+                min-height: 620px;
+                height: 78vh;
+            }
+
+            #hero-gallery > .hero-slide > div:last-child {
+                padding-left: 16px;
+                padding-right: 16px;
+                padding-bottom: 52px;
+            }
+
+            #hero-gallery .reveal-element {
+                max-width: 100%;
+            }
+
+            #hero-gallery .reveal-element > div:first-child {
+                margin-bottom: 18px;
+                padding: 8px 12px;
+                max-width: 100%;
+            }
+
+            #hero-gallery .reveal-element > div:first-child span:last-child {
+                font-size: 11px;
+                letter-spacing: 0.08em;
+                white-space: normal;
+            }
+
+            #hero-gallery h1,
+            #hero-gallery h2 {
+                font-size: clamp(2.25rem, 11vw, 3.25rem);
+                line-height: 1.05;
+                margin-bottom: 24px;
+            }
+
+            #hero-gallery p {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 24px;
+            }
+
+            #hero-gallery .reveal-element > div:last-child {
+                gap: 12px;
+            }
+
+            #hero-gallery a {
+                width: 100%;
+                justify-content: center;
+                padding: 13px 18px;
+                font-size: 16px;
+            }
+
+            #hero-gallery .slider-dot {
+                width: 24px;
+            }
+
+            #hero-gallery > .absolute.bottom-32 {
+                bottom: 20px;
+                right: 16px;
+                left: 16px;
+                justify-content: center;
+            }
+
+            body > .fixed.bottom-8 {
+                right: 16px;
+                bottom: 16px;
+                gap: 10px;
+            }
+
+            body > .fixed.bottom-8 .fab-label {
+                display: none;
+            }
+
+            body > .fixed.bottom-8 .fab-animation > div {
+                width: 48px;
+                height: 48px;
+            }
+        }
     </style>
 </head>
 <body class="bg-surface-base font-body-md text-on-background overflow-x-hidden">
@@ -168,7 +246,7 @@
 </div>
 <!-- TopNavBar -->
 <header class="sticky top-0 w-full z-[100] bg-glass-fill backdrop-blur-md border-b border-glass-border shadow-sm">
-<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-20">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
 <a class="font-headline-md text-headline-md font-bold text-primary" href="index.html">RDS Independent PU College</a>
 <div class="hidden md:flex items-center gap-8">
 <a class="font-label-lg text-label-lg text-secondary font-bold transition-colors duration-300 transition-transform active:scale-95" aria-current="page" href="index.html">Home</a>
@@ -184,11 +262,26 @@
 <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-transform active:scale-95" href="contact.html">Contact</a>
 <a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-lg hover:scale-105 transition-all shadow-md inline-block" href="admissions.html">Apply Now</a>
 </div>
-<button class="md:hidden text-primary">
+<button class="md:hidden text-primary" data-mobile-menu-toggle aria-expanded="false" aria-controls="mobile-menu" type="button">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </nav>
-</header>
+<div id="mobile-menu" class="hidden md:hidden bg-white/95 border-t border-glass-border backdrop-blur-md">
+<div class="flex flex-col items-start gap-3 py-4 px-margin-mobile">
+<a class="font-label-lg text-label-lg text-secondary font-bold transition-colors duration-300" aria-current="page" href="index.html">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="about.html">About</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="academics.html">Academics</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="admissions.html">Admissions</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="facilities.html">Facilities</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="faculty.html">Faculty</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="gallery.html">Gallery</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="news.html">News</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="events.html">Events</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="downloads.html">Downloads</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="contact.html">Contact</a>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-lg hover:scale-105 transition-all shadow-md inline-block" href="admissions.html">Apply Now</a>
+</div>
+</div>
 </header>
 <main>
 <!-- Hero Section -->
@@ -583,14 +676,23 @@
 <a class="hover:text-secondary-fixed transition-colors" href="mailto:rdssciencepucollege@gmail.com">rdssciencepucollege@gmail.com</a>
 <a class="hover:text-secondary-fixed transition-colors" href="tel:+919886565627">9886565627</a>
 </div>
-<div class="flex gap-4 pt-4">
-<a class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all cursor-pointer shadow-lg" href="https://maps.app.goo.gl/4o1L17NLaKxrf8Cu8?g_st=ac" target="_blank" rel="noopener">
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all cursor-pointer shadow-lg" href="https://maps.app.goo.gl/4o1L17NLaKxrf8Cu8?g_st=ac" target="_blank" rel="noopener" aria-label="Open map directions">
 <span class="material-symbols-outlined text-[20px]">public</span>
 </a>
-<a class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all cursor-pointer shadow-lg" href="https://wa.me/919886565627?text=Hi%20RDS%20Independent%20PU%20College%2C%20I%20need%20help%20with%20admissions." target="_blank" rel="noopener">
+<a class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all cursor-pointer shadow-lg" href="https://wa.me/919886565627?text=Hi%20RDS%20Independent%20PU%20College%2C%20I%20need%20help%20with%20admissions." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
 <span class="material-symbols-outlined text-[20px]">share</span>
 </a>
-<a class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all cursor-pointer shadow-lg" href="mailto:rdssciencepucollege@gmail.com">
+<a class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all cursor-pointer shadow-lg" href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=aumzex2" target="_blank" rel="noopener" aria-label="Instagram">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</a>
+<a class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all cursor-pointer shadow-lg" href="https://www.facebook.com/profile.php?id=61594579027045" target="_blank" rel="noopener" aria-label="Facebook">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</a>
+<a class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all cursor-pointer shadow-lg" href="https://www.youtube.com/@RDS_PU_SCIENCE_COLLEGE_MUDALAG" target="_blank" rel="noopener" aria-label="YouTube">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+</a>
+<a class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all cursor-pointer shadow-lg" href="mailto:rdssciencepucollege@gmail.com" aria-label="Email us">
 <span class="material-symbols-outlined text-[20px]">mail</span>
 </a>
 </div>
@@ -724,4 +826,29 @@
     });
 </script>
 <script src="drive-images.js?v=20260918"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('[data-mobile-menu-toggle]');
+    const menu = document.getElementById('mobile-menu');
+
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', function () {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      menu.classList.toggle('hidden');
+      toggle.innerHTML = isOpen
+        ? '<span class="material-symbols-outlined">menu</span>'
+        : '<span class="material-symbols-outlined">close</span>';
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.innerHTML = '<span class="material-symbols-outlined">menu</span>';
+      });
+    });
+  });
+</script>
 </body></html>
