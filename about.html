@@ -8,106 +8,10 @@
 <meta property="og:description" content="Learn about the college's approach to learning and student development.">
 <meta property="og:url" content="https://rds-puc-science-website.vercel.app/about.html">
 <meta property="og:type" content="website">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="assets/css/site.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@400;600;700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "tertiary-fixed": "#ffe081",
-                    "on-background": "#1a1c1e",
-                    "surface-dim": "#dadadc",
-                    "gradient-end": "#002244",
-                    "on-tertiary": "#ffffff",
-                    "secondary-fixed-dim": "#e9c400",
-                    "on-primary": "#ffffff",
-                    "surface-base": "#f9f9ff",
-                    "on-primary-fixed": "#001b3c",
-                    "on-surface-variant": "#43474f",
-                    "secondary-fixed": "#ffe16d",
-                    "on-tertiary-fixed": "#231b00",
-                    "on-secondary-container": "#6e5c00",
-                    "on-tertiary-fixed-variant": "#564500",
-                    "tertiary-container": "#cca81a",
-                    "error": "#ba1a1a",
-                    "primary-fixed-dim": "#a7c8ff",
-                    "error-container": "#ffdad6",
-                    "primary-fixed": "#d5e3ff",
-                    "surface-container-high": "#e8e8ea",
-                    "surface-container-low": "#f3f3f6",
-                    "secondary-container": "#fcd400",
-                    "on-secondary": "#ffffff",
-                    "surface-bright": "#f9f9fc",
-                    "outline": "#737780",
-                    "gradient-mid": "#004080",
-                    "primary-container": "#003366",
-                    "on-error": "#ffffff",
-                    "inverse-primary": "#a7c8ff",
-                    "on-primary-fixed-variant": "#1f477b",
-                    "inverse-on-surface": "#f0f0f3",
-                    "surface-container-highest": "#e2e2e5",
-                    "surface-container": "#eeeef0",
-                    "inverse-surface": "#2f3133",
-                    "background": "#f9f9fc",
-                    "glass-fill": "rgba(255, 255, 255, 0.70)",
-                    "on-error-container": "#93000a",
-                    "surface-variant": "#e2e2e5",
-                    "secondary": "#705d00",
-                    "primary": "#001e40",
-                    "surface-tint": "#3a5f94",
-                    "on-primary-container": "#799dd6",
-                    "outline-variant": "#c3c6d1",
-                    "surface-container-lowest": "#ffffff",
-                    "gradient-start": "#003366",
-                    "on-surface": "#1a1c1e",
-                    "surface": "#f9f9fc",
-                    "on-tertiary-container": "#4e3e00",
-                    "tertiary-fixed-dim": "#eac339",
-                    "on-secondary-fixed-variant": "#544600",
-                    "glass-border": "rgba(255, 255, 255, 0.20)",
-                    "on-secondary-fixed": "#221b00",
-                    "tertiary": "#725c00"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "gutter": "24px",
-                    "container-max": "1280px",
-                    "margin-desktop": "64px",
-                    "unit": "4px",
-                    "margin-mobile": "16px"
-            },
-            "fontFamily": {
-                    "body-lg": ["Inter"],
-                    "body-md": ["Inter"],
-                    "headline-lg": ["Sora"],
-                    "label-md": ["Inter"],
-                    "label-lg": ["Inter"],
-                    "headline-md": ["Sora"],
-                    "display-lg-mobile": ["Sora"],
-                    "display-lg": ["Sora"]
-            },
-            "fontSize": {
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                    "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
-            }
-          },
-        },
-      }
-    </script>
+
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -132,12 +36,12 @@
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
-        
+
         .quick-enquiry-tab {
             writing-mode: vertical-rl;
             transform: translateY(-50%);
         }
-        
+
         @keyframes count-up {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -494,10 +398,9 @@
 </div>
 </div>
 <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-on-primary/60">&copy; 2026 RDS Independent PU College. All rights reserved.</p>
 <p class="text-on-primary/60 font-label-md">Accredited by PU Board Excellence Committee</p>
 </div>
-<p class="border-t border-white/10 pt-6 text-center text-on-primary/80 text-xs font-semibold tracking-wide">DESIGNED AND DEVELOPED &amp; HOSTED BY: ESSENCE ONLINE SOLUTIONS, BELAGAVI © 2026, ALL RIGHTS RESERVED.</p>
+<p class="border-t border-white/10 pt-6 text-center text-on-primary/80 text-xs font-semibold tracking-wide">&copy; 2026 RDS Group of Institutions, Mudalagi, Karnataka. The content is owned by RDS Group of Institutions, and the website is designed, developed, and hosted by Essence Online Solutions, Belagavi. All rights reserved.</p>
 </div>
 </footer>
 <script>
@@ -511,20 +414,20 @@
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('reveal-visible');
-                
+
                 // Animate numbers inside if they exist
                 const counters = entry.target.querySelectorAll('[data-count]');
                 counters.forEach(counter => {
                     const target = parseInt(counter.getAttribute('data-count'));
                     const duration = 2000;
                     const startTime = performance.now();
-                    
+
                     const updateCount = (currentTime) => {
                         const elapsed = currentTime - startTime;
                         const progress = Math.min(elapsed / duration, 1);
                         const current = Math.floor(progress * target);
                         counter.textContent = current.toLocaleString() + (counter.textContent.includes('%') ? '%' : '');
-                        
+
                         if (progress < 1) {
                             requestAnimationFrame(updateCount);
                         } else {
@@ -534,7 +437,7 @@
                     requestAnimationFrame(updateCount);
                     counter.removeAttribute('data-count'); // Prevent re-animation
                 });
-                
+
                 revealObserver.unobserve(entry.target);
             }
         });
@@ -600,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             const elapsed = currentTime - startTime;
                             const progress = Math.min(elapsed / duration, 1);
                             const val = Math.floor(progress * target);
-                            
+
                             // Format with commas ONLY for 10,000+ (so 52,000 gets commas, but 2000, 2012, 2026 stay clean)
                             counter.innerText = target >= 10000 ? val.toLocaleString('en-US') : val;
 
